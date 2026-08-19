@@ -51,7 +51,7 @@ const EditQuestion = () => {
             const token = localStorage.getItem("token");
 
             const response = await fetch(
-                `http://localhost:5000/api/questions/${selectedQuestion.id}`,
+                `${import.meta.env.VITE_API_URL}/api/questions/${selectedQuestion.id}`,
                 {
                     method: "PUT",
 

@@ -10,7 +10,7 @@ const StudentResults = () => {
                 const token = localStorage.getItem("token");
 
                 const response = await fetch(
-                    "http://localhost:5000/api/results/my-results",
+                    `${import.meta.env.VITE_API_URL}/api/results/my-results`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,

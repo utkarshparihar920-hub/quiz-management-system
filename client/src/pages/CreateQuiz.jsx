@@ -45,7 +45,7 @@ const CreateQuiz = () => {
 
 
             const response = await fetch(
-                "http://localhost:5000/api/quizzes",
+                `${import.meta.env.VITE_API_URL}/api/quizzes`,
                 {
                     method: "POST",
 

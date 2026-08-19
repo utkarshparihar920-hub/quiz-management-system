@@ -11,7 +11,7 @@ const Users = () => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-          "http://localhost:5000/api/users",
+          `${import.meta.env.VITE_API_URL}/api/users`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -44,7 +44,7 @@ const Users = () => {
       const user = users.find((user) => user.id === id);
 
       const response = await fetch(
-        `http://localhost:5000/api/users/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/users/${id}`,
         {
           method: "PUT",
           headers: {
@@ -83,7 +83,7 @@ const Users = () => {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/users/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/users/${id}`,
         {
           method: "DELETE",
           headers: {

@@ -15,7 +15,7 @@ const Questions = () => {
                 const token = localStorage.getItem("token");
 
                 const response = await fetch(
-                    "http://localhost:5000/api/questions",
+                `${import.meta.env.VITE_API_URL}/api/questions`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ const Questions = () => {
             const token = localStorage.getItem("token");
 
             const response = await fetch(
-                `http://localhost:5000/api/questions/${id}`,
+                `${import.meta.env.VITE_API_URL}/api/questions/${id}`,
                 {
                     method: "DELETE",
                     headers: {

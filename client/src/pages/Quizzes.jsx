@@ -14,7 +14,7 @@ const Quizzes = () => {
                 const token = localStorage.getItem("token");
 
                 const response = await fetch(
-                    "http://localhost:5000/api/quizzes",
+                    `${import.meta.env.VITE_API_URL}/api/quizzes`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -56,7 +56,7 @@ const Quizzes = () => {
             const token = localStorage.getItem("token");
 
             const response = await fetch(
-                `http://localhost:5000/api/quizzes/${id}`,
+                `${import.meta.env.VITE_API_URL}/api/quizzes/${id}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -102,7 +102,7 @@ const Quizzes = () => {
                     : "Published";
 
             const response = await fetch(
-                `http://localhost:5000/api/quizzes/${id}`,
+                `${import.meta.env.VITE_API_URL}/api/quizzes/${id}`,
                 {
                     method: "PUT",
                     headers: {

@@ -28,7 +28,7 @@ const AttemptQuiz = () => {
 
                 // Fetch quiz details
                 const quizResponse = await fetch(
-                    `http://localhost:5000/api/quizzes/${quiz_id}`,
+                    `${import.meta.env.VITE_API_URL}/api/quizzes/${quiz_id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -58,7 +58,7 @@ const AttemptQuiz = () => {
 
                 // Fetch questions
                 const questionResponse = await fetch(
-                    `http://localhost:5000/api/questions/quiz/${quiz_id}`,
+                    `${import.meta.env.VITE_API_URL}/api/questions/quiz/${quiz_id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -225,7 +225,7 @@ const AttemptQuiz = () => {
 
 
             const response = await fetch(
-                "http://localhost:5000/api/results/submit",
+                `${import.meta.env.VITE_API_URL}/api/results/submit`,
                 {
                     method: "POST",
 
