@@ -1,0 +1,18 @@
+const express = require("express");
+const router = express.Router();
+
+const {
+    getDashboardStats,
+} = require("../controllers/dashboardController");
+
+const authMiddleware = require("../middleware/authMiddleware");
+const roleMiddleware = require("../middleware/roleMiddleware");
+
+router.get(
+    "/stats",
+    authMiddleware,
+    roleMiddleware("admin"),
+    getDashboardStats
+);
+
+module.exports = router;
