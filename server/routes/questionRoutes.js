@@ -8,7 +8,7 @@ const {
     deleteQuestion,
     updateQuestion,
     getQuestionsByQuiz
-} = require("../controllers/QuestionController");
+} = require("../controllers/questionController");
 
 const authMiddleware = require("../middleware/authMiddleware");
 const roleMiddleware = require("../middleware/roleMiddleware");
